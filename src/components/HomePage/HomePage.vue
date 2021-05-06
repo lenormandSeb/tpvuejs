@@ -1,7 +1,15 @@
 <template>
     <div>
         <ul v-for="item in data" :key="item.id">
-            <router-link :to="{path : '/categorie', params: {id : item.id}}">{{ item.name }}</router-link>
+            <router-link :to="{
+                name : 'categorieSub',
+                params: {
+                    id : item.id,
+                    categorie: item.name
+                    }
+                }">
+                Categorie : {{ item.name }}
+            </router-link>
         </ul>
     </div>
 </template>
